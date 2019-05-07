@@ -1,0 +1,11 @@
+/Users/alexvassiliou/code/alexvassiliou/linq_tutorial/bin/Debug/netcoreapp2.1/linq_tutorial.deps.json
+/Users/alexvassiliou/code/alexvassiliou/linq_tutorial/bin/Debug/netcoreapp2.1/linq_tutorial.runtimeconfig.json
+/Users/alexvassiliou/code/alexvassiliou/linq_tutorial/bin/Debug/netcoreapp2.1/linq_tutorial.runtimeconfig.dev.json
+/Users/alexvassiliou/code/alexvassiliou/linq_tutorial/bin/Debug/netcoreapp2.1/linq_tutorial.dll
+/Users/alexvassiliou/code/alexvassiliou/linq_tutorial/bin/Debug/netcoreapp2.1/linq_tutorial.pdb
+/Users/alexvassiliou/code/alexvassiliou/linq_tutorial/obj/Debug/netcoreapp2.1/linq_tutorial.csprojAssemblyReference.cache
+/Users/alexvassiliou/code/alexvassiliou/linq_tutorial/obj/Debug/netcoreapp2.1/linq_tutorial.csproj.CoreCompileInputs.cache
+/Users/alexvassiliou/code/alexvassiliou/linq_tutorial/obj/Debug/netcoreapp2.1/linq_tutorial.AssemblyInfoInputs.cache
+/Users/alexvassiliou/code/alexvassiliou/linq_tutorial/obj/Debug/netcoreapp2.1/linq_tutorial.AssemblyInfo.cs
+/Users/alexvassiliou/code/alexvassiliou/linq_tutorial/obj/Debug/netcoreapp2.1/linq_tutorial.dll
+/Users/alexvassiliou/code/alexvassiliou/linq_tutorial/obj/Debug/netcoreapp2.1/linq_tutorial.pdb

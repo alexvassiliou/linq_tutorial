@@ -8,14 +8,21 @@ namespace linq_tutorial
     {
         static void Main(string[] args)
         {
-            var startingDeck = from s in Suits()
-                               from r in Rank()
-                               select new {Suit = s, Rank = r};
+            // var startingDeck = from s in Suits()
+            //                    from r in Ranks()
+            //                    select new {Suit = s, Rank = r};
+
+            var startingDeck = Suits().SelectMany(suit => Ranks().Select(rank => new { Suit = suit, Rank = rank }));
+    
+            
 
             foreach(var card in startingDeck)
             {
                 Console.WriteLine(card);
             }
+
+            var top = startingDeck.Take(26);
+            var bottom = startingDeck.Skip(26);
         }
 
         static IEnumerable<string> Suits()
@@ -26,7 +33,7 @@ namespace linq_tutorial
             yield return "spades";                                                      
         }
 
-        static IEnumerable<string> Rank()
+        static IEnumerable<string> Ranks()
         {
             yield return "two";
             yield return "three";
