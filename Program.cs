@@ -16,13 +16,25 @@ namespace linq_tutorial
     
             
 
-            foreach(var card in startingDeck)
-            {
-                Console.WriteLine(card);
-            }
+            // foreach(var card in startingDeck)
+            // {
+            //     Console.WriteLine(card);
+            // }
 
-            var top = startingDeck.Take(26);
-            var bottom = startingDeck.Skip(26);
+            var times = 0;
+            var shuffle = startingDeck;
+            do
+            {
+                shuffle = shuffle.Take(26).InterleaveSequenceWith(shuffle.Skip(26));
+
+                foreach(var card in shuffle)
+                {
+                    Console.WriteLine(card);
+                }
+                Console.WriteLine();
+                times++;
+            } while (!startingDeck.SequenceEquals(shuffle));
+            Console.WriteLine(times);
         }
 
         static IEnumerable<string> Suits()
