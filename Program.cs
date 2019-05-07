@@ -8,24 +8,25 @@ namespace linq_tutorial
     {
         static void Main(string[] args)
         {
-            // var startingDeck = from s in Suits()
-            //                    from r in Ranks()
-            //                    select new {Suit = s, Rank = r};
+            var startingDeck = (from s in Suits().LogQuery("Suit Generation")
+                                from r in Ranks().LogQuery("Value Generation")
+                                select new { Suit = s, Rank = r })
+                                .LogQuery("Starting Deck")
+                                .ToArray();
 
-            var startingDeck = Suits().SelectMany(suit => Ranks().Select(rank => new { Suit = suit, Rank = rank }));
+            // var startingDeck = Suits().SelectMany(suit => Ranks().Select(rank => new { Suit = suit, Rank = rank }));
     
-            
 
-            // foreach(var card in startingDeck)
-            // {
-            //     Console.WriteLine(card);
-            // }
 
             var times = 0;
             var shuffle = startingDeck;
             do
             {
-                shuffle = shuffle.Take(26).InterleaveSequenceWith(shuffle.Skip(26));
+                shuffle = shuffle.Skip(26)
+                          .LogQuery("Bottom Half")
+                          .InterleaveSequenceWith(shuffle.Take(26).LogQuery("Top Half"))
+                          .LogQuery("Shuffle")
+                          .ToArray();
 
                 foreach(var card in shuffle)
                 {

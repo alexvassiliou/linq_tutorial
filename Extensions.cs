@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 
 namespace linq_tutorial
 {
@@ -31,6 +32,16 @@ namespace linq_tutorial
                 }
             }
             return true; 
+        }
+
+        public static IEnumerable<T> LogQuery<T>(this IEnumerable<T> sequence, string tag)
+        {
+            using(var writer = File.AppendText("debug.log"))
+            {
+                writer.WriteLine($"Executing Query {tag}");
+            }
+
+            return sequence;
         }
     }
 }
