@@ -8,7 +8,14 @@ namespace linq_tutorial
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var startingDeck = from s in Suits()
+                               from r in Rank()
+                               select new {Suit = s, Rank = r};
+
+            foreach(var card in startingDeck)
+            {
+                Console.WriteLine(card);
+            }
         }
 
         static IEnumerable<string> Suits()
